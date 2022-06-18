@@ -89,6 +89,10 @@ body {
 	margin-right: 0;
 }
 
+#pw-gen-lengthError {
+    color: red;
+}
+
 .pw-gen-btn {
     display: block;
     border: none;

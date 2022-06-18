@@ -6,6 +6,7 @@ const numbersEl = document.getElementById("numbers");
 const symbolsEl = document.getElementById("symbols");
 const generateEl = document.getElementById("generatepassword");
 const copytoclipboard = document.getElementById("copy");
+const lengthError = document.getElementById("pw-gen-lengthError");
 
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122);
@@ -33,7 +34,16 @@ generateEl.addEventListener('click', () => {
     const hasNumbers = numbersEl.checked;
     const hasSymbols = symbolsEl.checked;
 
-    result.innerText = generatePassword(length, hasUpper, hasLower, hasNumbers, hasSymbols);
+    if(length < 8) {
+        lengthError.innerText = "Minimum password length is 8."
+    } else {
+        lengthError.innerText = "";
+        if (!hasUpper && !hasLower && !hasNumbers && !hasSymbols) {
+            alert("Please select atleast one type of character set.")
+        } else {
+            result.innerText = generatePassword(length, hasUpper, hasLower, hasNumbers, hasSymbols);
+        }
+    }
 })
 
 function generatePassword(length, hasUpper, hasLower, hasNumbers, hasSymbols) {
