@@ -10,17 +10,22 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+
     <title>EasyPass - Password Strength Checker</title>
 </head>
 <body>
     <div class="pw-stgt-check-container">
         <h1>Password Strength Checker</h1>
-        <div class="strenght-meter"></div>
+        <div class="strength-meter" id="strength-meter"></div>
         <div class="entrypoint">
-            <input type="password" id="password" autofocus>
-            <i class="fa-solid fa-eye" id="icon"></i>
+            <input type="password" class="password-input" id="password-input" autofocus>
+            <i class="fa-solid fa-eye-slash" id="icon"></i>
         </div>
         <div class="criteria" id="criteria"></div>
     </div>
+
+    <script src="passstrengthchecker.js"></script>
 </body>
 </html>

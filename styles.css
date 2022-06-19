@@ -109,3 +109,73 @@ body {
 		font-size: 14px;
 	}
 }
+
+/* EasyPass - Password Strength Checker Styles*/
+
+.pw-stgt-check-container {
+	background-color: rgb(41, 11, 71);
+    width: 60%;
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+	padding: 20px;
+}
+
+.pw-stgt-check-container h1 {
+	margin: 2rem 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.strength-meter {
+	position: relative;
+	height: 2.5rem;
+	width: 100%;
+	border: 3px solid hsl(261, 88%, 50%);
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.strength-meter::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: calc(1% * var(--strength-value, 0));
+	background-color: hsl(261, 88%, 80%);
+	transition: width 200ms ease;
+}
+
+.entrypoint {
+	width: 100%;
+}
+
+.password-input {
+	margin: 2rem 0;
+	width: 93%;
+	padding: 0.25rem 0.75rem;
+	border: 2px solid hsl(261, 88%, 70%);
+	background-color: #3B3B98;
+	color: white;
+	outline: none;
+	height: 3rem;
+	font-size: larger;
+	border-radius: 0.5rem;
+	text-align: center;
+}
+
+.password-input:focus {
+	outline: none;
+	border: 2px solid hsl(261, 88%, 90%);
+}
+
+#icon {
+	margin-left: 0.5rem;
+	cursor: pointer;
+}
+
+.criteria > * {
+	margin-top: 0.75rem;
+}
